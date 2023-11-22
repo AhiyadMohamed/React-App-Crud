@@ -3,20 +3,25 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
 import About from "./Components/About";
 import Contacts from "./Components/Contacts";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
+      <Provider store={store}>
       <App />
       <Switch>
         <Route path="/About" component={About} />
         <Route path="/Contacts" component={Contacts} />
       </Switch>
+
+      </Provider>
+      
     </Router>
   </React.StrictMode>
 );
