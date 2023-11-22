@@ -3,26 +3,21 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Navbar from "./Components/Navbar";
+
 import About from "./Components/About";
 import Contacts from "./Components/Contacts";
-import { Provider } from "react-redux";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import store from "./store";
-import ContactsSlice from "./Features/Contacts/ContactsSlice";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <Router>
-        <App />
-        <Switch>
-          <Route path="/About" component={About} />
-          <Route path="/Contacts" component={Contacts} />
-        </Switch>
-      </Router>
-    </Provider>
+    <Router>
+      <App />
+      <Switch>
+        <Route path="/About" component={About} />
+        <Route path="/Contacts" component={Contacts} />
+      </Switch>
+    </Router>
   </React.StrictMode>
 );
 
